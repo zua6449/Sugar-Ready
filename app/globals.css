@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main_cover{
+  background: url("slider1.jpg") no-repeat center;
+  background-size: cover;
+  
+}
+@media (max-width:417px) {
+.nav-logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+}
+.nav-logo img{
+  height: 50%;
+  text-align: center;
+}
+}
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 3vw;
+  color: white;
+  padding-right: 15px;
+  text-transform: uppercase;
+
+}
+@media (max-width:370px) {
+  .cta span {
+    font-size: 3vw;
+  }
+
+  .main{
+    height: fit-content;
+    padding: 5px 5px 5px 5px;
+    justify-content: start;
+  }
+  .main h1{
+    font-size: 8vw;
+  }
+  .main p{
+    font-size: 5vw;
+  }
+  .cta svg {
+    width: 10px;
+  }
+}
+@media (min-width: 767px) {
+  .cta span {
+    font-size: 20px;
+  }
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: top right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.underline_style::before {
+    opacity: 1;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #49780d;
+    position: absolute;
+    bottom: 37%;
+    transform: translateY(-50%);
+    transition: width 0.3s ease;
+}
+.underline_style:hover::before {
+    width: 30px;
+}
+@media (max-width: 1024px) {
+    .underline_style::before {
+        opacity: 0;
+    }
+}
